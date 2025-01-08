@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall
 INCLUDES = -I../headers/assembler -I../headers/
 
-SRCS = assembler.c preprocessor.c parser.c ResourceTable.c ../Error.c
+SRCS = assembler.c preprocessor.c lexer-parser.c translator-generator.c SymbolTable.c utils.c ../Error.c
 
 OBJS = $(SRCS:%.c=%.o)
 

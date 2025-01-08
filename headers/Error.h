@@ -13,7 +13,8 @@
 typedef enum {
 	ERR_MEM,
 	ERR_REDEFINED,
-	ERR_INVALID
+	ERR_INVALID,
+	ERR_MISSING_TOKEN
 } errType;
 
 typedef enum {

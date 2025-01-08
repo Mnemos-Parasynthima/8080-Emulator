@@ -16,7 +16,7 @@
  */
 static char* trimSpaceComments(char* line, int len) {
 	char* start = line;
-	while (isspace(*start)) {
+	while (isblank(*start)) {
 		start++;
 	}
 
@@ -26,8 +26,8 @@ static char* trimSpaceComments(char* line, int len) {
 		return NULL;
 	}
 
-	char* end = line + len;
-	while (end > start && isspace(*end)) {
+	char* end = (line + len) - 1;
+	while (end > start && isblank(*end)) {
 		end--;
 	}
 
@@ -87,7 +87,7 @@ char** preprocess(FILE* sourceFile, int* size) {
 				// Why allocate new memory when getline already allocated memory for that line
 				// However, getline allocates a buffer, meaning most likely, there is internal fragmentation
 				// as most of that is not occupied
-				// So a solution could just to allocate just enough space
+				// So a solution could be just to allocate just enough space
 				// Thus, a space-time tradeoff:
 				// Use more time (to allocate) to use less space or
 				// Use more space to use less time (to allocate)
