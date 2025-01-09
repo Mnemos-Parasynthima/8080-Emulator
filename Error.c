@@ -7,11 +7,12 @@
 
 static char buffer[150];
 
-static char* errnames[ERR_MISSING_TOKEN+1] = {
+static char* errnames[ERR_AEF+1] = {
 	"MEMORY ERROR",
-	"REDEFINITION ERROR",
+	"SYMBOL REDEFINITION ERROR",
 	"INVALID TOKEN ERROR",
-	"MISSING TOKEN ERROR"
+	"MISSING TOKEN ERROR",
+	"AEF ERROR"
 };
 
 static void formatMessage(const char* fmsg, va_list args) {
