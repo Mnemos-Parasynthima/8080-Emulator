@@ -26,6 +26,18 @@ void initMachine() {
 		guest.proc->tempreg[i] = 0x00;
 	}
 
+	guest.proc->IR = 0x0;
+	guest.proc->PC = 0x00;
+	guest.proc->SP = 0x00;
+	
+	AddrBus = 0x00;
+	DataBus = 0x0;
+	CtrlBus = 0x0;
+
+	guest.proc->eflags = PACK_EFLAGS(0,0,0,0,0);
+
+	State.intdatabus = 0x0;
+
 	guest.mem = (mem_t*) malloc(sizeof(mem_t));
 	guest.mem->maxAddr = MAX_ADDR;
 	guest.mem->wordSize = WORD_SIZE;

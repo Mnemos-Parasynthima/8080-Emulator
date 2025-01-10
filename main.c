@@ -32,5 +32,7 @@ int main(int argc, char const* argv[]) {
 	uint16_t entry = loadAEF(filename);
 	int ret = runAEF(entry);
 
+	printf("Finished running\n");
+
 	return ret;
 }

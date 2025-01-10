@@ -26,11 +26,9 @@ typedef struct mem {
 	uint8_t ram[MAX_ADDR];
 } mem_t;
 
-typedef enum {
-	READY,
-	PROCESSED,
-	ERROR = -1
-} mem_status_t;
 
+
+void memRead();
+void memWrite();
 
 #endif

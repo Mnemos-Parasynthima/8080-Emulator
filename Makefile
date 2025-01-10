@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS = -Wall
-INCLUDES = -Iheaders -Iheaders/base/ -Iheaders/kernel/ -Iheaders/pipe/
+INCLUDES = -Iheaders -Iheaders/base/ -Iheaders/kernel/ -Iheaders/stages/
 
-SRCS = base/machine.c kernel/aef-loadrun.c main.c Error.c
+SRCS = base/machine.c base/hardware.c base/mem.c kernel/aef-loadrun.c stages/fetch.c main.c Error.c
 
 OBJS = $(SRCS:%.c=%.o)
 
